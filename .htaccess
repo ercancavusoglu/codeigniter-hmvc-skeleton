@@ -1,0 +1,7 @@
+#Any HTTP request other than those for index.php, assets folder, files folder and robots.txt
+#is treated as a request for your index.php file.
+
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule .* index.php?/$0 [PT,L] 
